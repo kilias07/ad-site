@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.max-w-screen-3xl {
+    max-width: 1920px;
+}
+
+.shadow-bottom {
+    box-shadow: 0 5px 5px -5px #333;
+}
+
+.content-inside {
+    min-height: calc(100vh - 64px - 210px - 128px);
+}
+
+@layer base {
+    body {
+        @apply bg-backgroundColor;
+    }
+}

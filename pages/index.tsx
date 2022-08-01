@@ -1,11 +1,12 @@
-import type {NextPage} from 'next';
+import type { NextPage } from "next";
+import { HeroSection } from "../components/hero";
 
 const Home: NextPage = () => {
-    return (
-        <div>
-          <h1 className="text-2xl uppercase underline">test</h1>
-        </div>
-    )
-}
+  return (
+    <>
+      <HeroSection />
+    </>
+  );
+};
 
-export default Home
+export default Home;
