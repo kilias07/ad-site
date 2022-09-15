@@ -27,12 +27,12 @@ export const Footer = () => {
 
             <ul className="list-none mb-0">
               <li>
-                <a href="#!" className="text-gray-800">
+                <a href="#" className="text-gray-800">
                   Link 1
                 </a>
               </li>
               <li>
-                <a href="#!" className="text-gray-800">
+                <a href="#" className="text-gray-800">
                   Link 2
                 </a>
               </li>

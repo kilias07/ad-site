@@ -14,6 +14,7 @@ module.exports = {
         claretLight: "#664343",
         grayLighter: "#B3ABAB",
         backgroundColor: "#F8FBFF",
+        backgroundColorTest: "#F8F8F7",
         whiteCream: "#FFFEF9",
       },
       screens: {
@@ -26,4 +27,5 @@ module.exports = {
     },
   },
   plugins: [],
+  darkMode: "class",
 };
