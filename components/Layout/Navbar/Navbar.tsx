@@ -37,8 +37,9 @@ export const Navbar = () => {
         </Link>
         <div className="flex items-center lg:hidden">
           <Switcher />
+          <span className="border-r border-grayLighter w-1 h-4 ml-2 mr-7" />
           <button
-            className="cursor-pointer text-xl mx-3 my-1 outline-none focus:outline-none"
+            className="cursor-pointer text-xl my-1 outline-none focus:outline-none mr-3"
             type="button"
             aria-label="menu"
             onClick={openCloseHamburger}
@@ -48,25 +49,22 @@ export const Navbar = () => {
         </div>
 
         <ul className="hidden lg:flex items-center">
-          <Switcher />
           {menuItems.map((item) => (
             <li key={item.title}>
               <Link href={item.link}>
-                <a
-                  onClick={openCloseHamburger}
-                  className="mx-2 py-2 uppercase text-sm hover:opacity-75 text-center font-medium tracking-tighter"
-                >
+                <a className="mx-2 py-2 uppercase text-sm hover:opacity-75 text-center font-medium tracking-tighter">
                   {item.title}
                 </a>
               </Link>
             </li>
           ))}
+          <Switcher />
         </ul>
       </div>
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
-            className="lg:hidden items-center overflow-hidden"
+            className="lg:hidden overflow-hidden"
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
             exit={{ height: 0 }}

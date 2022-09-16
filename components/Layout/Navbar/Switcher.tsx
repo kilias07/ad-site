@@ -1,27 +1,67 @@
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
+import { HiOutlineMoon, HiOutlineSun, HiDesktopComputer } from "react-icons/hi";
+import { useOnClickOutside } from "../../../hooks/useClickOutside";
+
+type Ref = HTMLDivElement | null;
 
 export function Switcher() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const [showDialog, setShowDialog] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+  const ulRef = useRef<Ref>(null);
 
   useEffect(() => setMounted(true), []);
+  useOnClickOutside(ulRef, () => setShowDialog(false));
+
+  let icon;
+
+  switch (resolvedTheme) {
+    case "light":
+      icon = <HiOutlineSun />;
+      break;
+    case "dark":
+      icon = <HiOutlineMoon />;
+      break;
+    default:
+      icon = <HiDesktopComputer />;
+      break;
+  }
+
+  const themeOpt = [
+    { name: "light", icon: <HiOutlineSun /> },
+    { name: "dark", icon: <HiOutlineMoon /> },
+    { name: "system", icon: <HiDesktopComputer /> },
+  ];
 
   if (!mounted) return null;
 
-  const spring = {
-    type: "spring",
-    stiffness: 700,
-    damping: 30,
-  };
-  const toggle = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
-
   return (
-    <div className="switch" data-ison={theme} onClick={toggle}>
-      <motion.div className="handle" layout transition={spring} />
+    <div ref={ulRef} className="relative mt-1">
+      <button
+        onClick={() => {
+          setShowDialog((prev) => !prev);
+        }}
+      >
+        {icon}
+      </button>
+      {showDialog && (
+        <ul
+          className="absolute top-8 -left-9 bg-backgroundColorTest shadow-2xl border border-grayLighter dark:bg-grayLight w-20 p-2 w-fit rounded-md"
+          onClick={() => setShowDialog(false)}
+        >
+          {themeOpt.map((el) => (
+            <li
+              key={el.name}
+              onClick={() => setTheme(el.name)}
+              className="flex items-center cursor-pointer mt-0.5 hover:opacity-75"
+            >
+              <span className="text-xl">{el.icon}</span>
+              <span>{el.name}</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
