@@ -1,4 +1,19 @@
 import { motion } from "framer-motion";
+import { GetStaticProps } from "next";
+import ContentService from "../../lib/contentful";
+import { IPosts } from "../../src/@types/contentful";
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = await ContentService.instance.getEntriesByType<IPosts[]>(
+    "posts"
+  );
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
 
 const Blog = () => {
   return (

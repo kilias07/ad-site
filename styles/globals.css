@@ -37,3 +37,7 @@
         @apply dark:bg-grayLight;
     }
 }
+
+.swiper-button-prev, .swiper-button-next {
+     color: black !important;
+}

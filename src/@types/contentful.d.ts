@@ -40,13 +40,13 @@ export interface IBlogPostsFields {
   /** Slug */
   slug: string;
 
-  /** Post Text */
+  /** Index Text */
   postText?: Document | undefined;
 
   /** Featured Image */
   featuredImage: Record<string, any>;
 
-  /** Post Gallery */
+  /** Index Gallery */
   postGallery: Record<string, any>;
 
   /** Description */
@@ -94,13 +94,13 @@ export interface IPostsFields {
   /** Slug */
   slug: string;
 
-  /** Post Text */
+  /** Index Text */
   postText?: Document | undefined;
 
   /** Featured Image */
   featuredImage: Record<string, any>;
 
-  /** Post Gallery */
+  /** Index Gallery */
   postGallery: Record<string, any>;
 
   /** Description */

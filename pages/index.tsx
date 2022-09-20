@@ -35,7 +35,7 @@ const Home: NextPage<Props> = ({ slider, posts }) => {
     >
       <HeroSection />
       <Slider slider={slider} />
-      <Works posts={posts} /> 3
+      <Works posts={posts} />
     </motion.div>
   );
 };

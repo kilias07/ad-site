@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import { config } from "dotenv";
+import { IPostsFields } from "../src/@types/contentful";
 
 // export const client = createClient({
 //   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID as string,
@@ -33,5 +34,14 @@ export default class ContentService {
         content_type: type,
       })
     ).items;
+  }
+
+  async getPostBySlug(slug: string) {
+    return (
+      await this.client.getEntries<IPostsFields>({
+        content_type: "posts",
+        "fields.slug": slug,
+      })
+    ).items[0];
   }
 }
