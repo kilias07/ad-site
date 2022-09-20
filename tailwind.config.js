@@ -22,7 +22,8 @@ module.exports = {
       },
       fontFamily: {
         lato: ["Lato", "sans-serif"],
-        sans: ["Lato", ...defaultTheme.fontFamily.sans],
+        poppins: ["poppins", "sans-serif"],
+        sans: ["poppins", ...defaultTheme.fontFamily.sans],
       },
     },
   },

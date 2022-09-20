@@ -1,8 +1,14 @@
+import { motion } from "framer-motion";
+
 const Contact = () => {
   return (
-    <div>
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <p>tu jest kontakt</p>
-    </div>
+    </motion.div>
   );
 };
 

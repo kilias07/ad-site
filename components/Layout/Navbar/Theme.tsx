@@ -5,7 +5,7 @@ import { useOnClickOutside } from "../../../hooks/useClickOutside";
 
 type Ref = HTMLDivElement | null;
 
-export function Switcher() {
+export function Theme() {
   const [mounted, setMounted] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
@@ -47,16 +47,16 @@ export function Switcher() {
       </button>
       {showDialog && (
         <ul
-          className="absolute top-8 -left-9 bg-backgroundColorTest shadow-2xl border border-grayLighter dark:bg-grayLight w-20 p-2 w-fit rounded-md"
+          className="absolute top-8 -left-14 bg-backgroundColorTest shadow-2xl border border-grayLighter dark:bg-grayLight w-20 p-2 w-fit rounded-md"
           onClick={() => setShowDialog(false)}
         >
           {themeOpt.map((el) => (
             <li
               key={el.name}
               onClick={() => setTheme(el.name)}
-              className="flex items-center cursor-pointer mt-0.5 hover:opacity-75"
+              className="flex items-center cursor-pointer hover:opacity-75"
             >
-              <span className="text-xl">{el.icon}</span>
+              <span className="text-lg mr-1">{el.icon}</span>
               <span>{el.name}</span>
             </li>
           ))}

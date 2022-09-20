@@ -4,7 +4,7 @@ import Link from "next/link";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { menuItems } from "./menuItems";
 import { AnimatePresence, motion } from "framer-motion";
-import { Switcher } from "./Switcher";
+import { Theme } from "./Theme";
 import { Logo } from "./Logo";
 type Ref = HTMLElement | null;
 
@@ -32,11 +32,13 @@ export const Navbar = () => {
             <div className="w-8 h-16 relative">
               <Logo />
             </div>
-            <span className="ml-3 font-bold lg:text-xl">ANDRZEJ DROMERT</span>
+            <span className="ml-3 font-bold lg:text-xl font-lato">
+              ANDRZEJ DROMERT
+            </span>
           </a>
         </Link>
         <div className="flex items-center lg:hidden">
-          <Switcher />
+          <Theme />
           <span className="border-r border-grayLighter w-1 h-4 ml-2 mr-7" />
           <button
             className="cursor-pointer text-xl my-1 outline-none focus:outline-none mr-3"
@@ -52,13 +54,13 @@ export const Navbar = () => {
           {menuItems.map((item) => (
             <li key={item.title}>
               <Link href={item.link}>
-                <a className="mx-2 py-2 uppercase text-sm hover:opacity-75 text-center font-medium tracking-tighter">
+                <a className="mx-2 py-2 text-base text-xl hover:opacity-75 text-center font-semibold tracking-tighter">
                   {item.title}
                 </a>
               </Link>
             </li>
           ))}
-          <Switcher />
+          <Theme />
         </ul>
       </div>
       <AnimatePresence>
@@ -77,7 +79,7 @@ export const Navbar = () => {
                   <Link href={item.link}>
                     <a
                       onClick={openCloseHamburger}
-                      className="mx-2 py-2 uppercase text-sm text-center font-medium tracking-tighter"
+                      className="mx-2 py-2 text-base text-center font-medium tracking-tighter"
                     >
                       {item.title}
                     </a>

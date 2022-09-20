@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:types": "contentful-typescript-codegen --output src/@types/contentful.d.ts"
   },
   "dependencies": {
-    "contentful": "^9.2.4",
     "framer-motion": "^6.5.1",
     "next": "12.2.2",
     "next-themes": "^0.2.0",
@@ -23,6 +23,10 @@
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.7",
+    "contentful": "^9.2.4",
+    "contentful-management": "^10.14.0",
+    "contentful-typescript-codegen": "^3.2.3",
+    "dotenv": "^16.0.2",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
     "postcss": "^8.4.14",
