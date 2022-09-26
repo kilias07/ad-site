@@ -27,7 +27,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await ContentService.instance.getEntriesByType<IPostsFields>(
     "posts"
   );
-
   return {
     paths: posts.map((post) => ({
       params: {
@@ -39,7 +38,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const Index: NextPage<Props> = ({ post }) => {
-  console.log(post);
   return (
     <div>
       <h1>{post.title}</h1>

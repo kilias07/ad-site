@@ -1,10 +1,11 @@
 import type { GetStaticProps, NextPage } from "next";
 import { IPosts, ISlider } from "../src/@types/contentful";
-import { HeroSection } from "../components/MainSite/hero";
-import { Slider } from "../components/MainSite/slider";
-import Works from "../components/MainSite/Works/Works";
 import ContentService from "../lib/contentful";
 import { motion } from "framer-motion";
+import Cta from "../components/MainSite/cta";
+import { Statement } from "../components/MainSite/Statement";
+import { HeroSection2 } from "../components/MainSite/HeroSection2";
+import { HeroSection } from "../components/MainSite/HeroSection";
 
 interface Props {
   slider: ISlider[];
@@ -33,9 +34,12 @@ const Home: NextPage<Props> = ({ slider, posts }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
+      <HeroSection2 />
+      <Statement />
+      <Cta />
       <HeroSection />
-      <Slider slider={slider} />
-      <Works posts={posts} />
+      {/*<Slider slider={slider} />*/}
+      {/*<Works posts={posts} />*/}
     </motion.div>
   );
 };

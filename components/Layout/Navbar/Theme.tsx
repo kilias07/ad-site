@@ -15,7 +15,6 @@ export function Theme() {
   useOnClickOutside(ulRef, () => setShowDialog(false));
 
   let icon;
-
   switch (resolvedTheme) {
     case "light":
       icon = <HiOutlineSun />;
@@ -47,7 +46,7 @@ export function Theme() {
       </button>
       {showDialog && (
         <ul
-          className="absolute top-8 -left-14 bg-backgroundColorTest shadow-2xl border border-grayLighter dark:bg-grayLight w-20 p-2 w-fit rounded-md"
+          className="absolute top-8 -left-14 bg-backgroundColorTest shadow-2xl border border-grayLighter dark:bg-grayLight p-2 w-fit rounded-md"
           onClick={() => setShowDialog(false)}
         >
           {themeOpt.map((el) => (
