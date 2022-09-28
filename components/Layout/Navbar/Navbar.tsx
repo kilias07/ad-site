@@ -54,7 +54,7 @@ export const Navbar = () => {
           {menuItems.map((item) => (
             <li key={item.title}>
               <Link href={item.link}>
-                <a className="mx-2 py-2 text-base text-xl hover:opacity-75 text-center font-semibold tracking-tighter">
+                <a className="mx-2 py-2 text-base text-xl hover:opacity-75 text-center font-medium tracking-tighter">
                   {item.title}
                 </a>
               </Link>

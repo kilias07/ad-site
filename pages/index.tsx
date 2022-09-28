@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import { IPosts, ISlider } from "../src/@types/contentful";
-import ContentService from "../lib/contentful";
+import ContentService from "../lib/contentfulClient";
 import { motion } from "framer-motion";
 import Cta from "../components/MainSite/cta";
 import { Statement } from "../components/MainSite/Statement";

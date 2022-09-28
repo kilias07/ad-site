@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate:types": "contentful-typescript-codegen --output src/@types/contentful.d.ts"
+    "generate:types": "contentful-typescript-codegen --output types/contentful.d.ts"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "@contentful/rich-text-types": "^15.13.2",
     "framer-motion": "^6.5.1",
     "next": "12.2.2",
     "next-themes": "^0.2.0",

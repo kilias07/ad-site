@@ -1,62 +1,28 @@
+import { GrFacebook, GrInstagram } from "react-icons/gr";
+import Link from "next/link";
+
 export const Footer = () => {
   return (
-    <footer className="bg-claretDark text-center lg:w-auto lg:static lg:block">
-      <div className="container p-6 mx-auto">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2">
-          <div className="mb-6">
-            <h5 className="uppercase font-bold mb-2.5 text-whiteCream">
-              Links
-            </h5>
-            <ul className="list-none mb-0 text-grayLighter">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-            </ul>
-          </div>
-          <div className="mb-6">
-            <h5 className="uppercase font-bold mb-2.5 text-whiteCream">
-              Links
-            </h5>
-            <ul className="list-none mb-0 text-grayLighter">
-              <li>
-                <a href="#" className="">
-                  Link 1
-                </a>
-              </li>
-              <li>
-                <a href="#">Link 2</a>
-              </li>
-            </ul>
-          </div>
-          <div className="mb-6">
-            <h5 className="uppercase font-bold mb-2.5 text-whiteCream">
-              Links
-            </h5>
-            <ul className="list-none mb-0 text-grayLighter">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-            </ul>
-          </div>
-          <div className="mb-6">
-            <h5 className="uppercase font-bold mb-2.5 text-whiteCream">
-              Links
-            </h5>
-            <ul className="list-none mb-0 text-grayLighter">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-            </ul>
-          </div>
+    <footer className="bg-claretDark">
+      <div className="mx-auto container flex justify-between py-8">
+        <Link href="/contact">
+          <a className="text-grayLighter">Zamów rzeźbę</a>
+        </Link>
+        <div className="flex gap-4">
+          <a
+            href="https://www.facebook.com/andrzej.dromert"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <GrFacebook className="fill-grayLighter text-4xl" />
+          </a>
+          <a
+            href="https://www.instagram.com/andrzej_dromert/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <GrInstagram className="fill-grayLighter text-4xl" />
+          </a>
         </div>
       </div>
       <div className="text-grayLighter text-center p-4">

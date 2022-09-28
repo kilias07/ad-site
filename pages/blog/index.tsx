@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
-import ContentService from "../../lib/contentful";
+import ContentService from "../../lib/contentfulClient";
 import { IPosts } from "../../src/@types/contentful";
 import BlogCard from "../../components/blog/BlogCard";
 import SearchPosts from "../../components/blog/searchPosts";

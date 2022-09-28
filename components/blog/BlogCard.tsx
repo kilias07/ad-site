@@ -9,7 +9,7 @@ interface Post {
 
 const BlogCard = ({ post }: Post) => {
   return (
-    <div className="max-w-[24rem] lg:max-w-[90%] m-8 rounded-xl h-fit shadow-2xl overflow-hidden lg:flex lg:flex-1 dark:bg-grayLighter dark:text-primaryColorGray">
+    <div className="max-w-[24rem] lg:max-w-[90%] m-8 rounded h-fit shadow-2xl overflow-hidden lg:flex lg:flex-1 dark:bg-grayLighter dark:text-primaryColorGray">
       <Image
         alt={post.fields.title}
         src={post.fields.featuredImage[0].url}

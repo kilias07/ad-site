@@ -7,7 +7,7 @@ interface Button {
 export const Button = ({ link }: Button) => {
   return (
     <Link href={`/${link}`}>
-      <a className="bg-claretDark px-2 py-1 rounded-2xl flex items-center text-white text-base w-fit">
+      <a className="shadow bg-claretDark hover:bg-gray-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-fit flex justify-center items-center">
         <span className="pl-1">Czytaj więcej</span>
         <BsArrowRightShort className="text-2xl" />
       </a>

@@ -25,6 +25,9 @@ module.exports = {
         poppins: ["poppins", "sans-serif"],
         sans: ["poppins", ...defaultTheme.fontFamily.sans],
       },
+      lineHeight: {
+        "poppins-fit": "8.5rem",
+      },
     },
   },
   plugins: [],
