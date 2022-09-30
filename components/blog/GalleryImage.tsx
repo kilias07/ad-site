@@ -9,16 +9,13 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import type { Swiper as SwiperType } from "swiper";
-// Import Swiper styles
 
 const GalleryImage: NextPage<{ postImages: PostImages[] }> = ({
   postImages,
 }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
-
-  console.log(postImages.length);
   return (
-    <div className="w-full h-[50rem]">
+    <div className="mx-auto xl:max-w-6xl">
       <Swiper
         loop={true}
         spaceBetween={10}
@@ -29,34 +26,37 @@ const GalleryImage: NextPage<{ postImages: PostImages[] }> = ({
       >
         {postImages.map((image) => (
           <SwiperSlide key={image.public_id}>
-            <div className="relative w-full h-full">
-              <Image
-                src={image.url}
-                layout="fill"
-                objectFit="contain"
-                objectPosition="center"
-              />
-            </div>
+            <Image
+              src={image.url}
+              height={image.height}
+              width={image.width}
+              quality={80}
+              layout="responsive"
+              priority
+            />
           </SwiperSlide>
         ))}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
         loop={true}
-        spaceBetween={10}
+        spaceBetween={3}
         slidesPerView={postImages.length > 8 ? 8 : postImages.length}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper"
+        lazy={true}
       >
         {postImages.map((image) => (
           <SwiperSlide key={image.public_id}>
-            <div className="h-full w-full">
+            <div className="relative mx-auto">
               <Image
+                quality={30}
                 src={image.url}
-                layout="fill"
-                objectFit="contain"
+                objectFit="cover"
+                width={200}
+                height={200}
                 objectPosition="center"
               />
             </div>

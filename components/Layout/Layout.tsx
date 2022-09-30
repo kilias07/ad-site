@@ -11,7 +11,7 @@ export const Layout = ({ children }: children) => {
   return (
     <>
       <Navbar />
-      <AnimatePresence>{children}</AnimatePresence>
+      <AnimatePresence exitBeforeEnter={true}>{children}</AnimatePresence>
       <Footer />
     </>
   );

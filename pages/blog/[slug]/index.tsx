@@ -3,11 +3,11 @@ import ContentService from "../../../lib/contentfulClient";
 import { IPostsFields } from "../../../src/@types/contentful";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-
 import { RICHTEXT_OPTIONS } from "../../../components/contentfulRichText";
 import GalleryImage from "../../../components/blog/GalleryImage";
 import { PostImages } from "../../../types/PostImages";
 import ProgressBar from "../../../components/animations/ProgrsBar";
+import { motion } from "framer-motion";
 
 interface Props {
   post: IPostsFields;
@@ -45,15 +45,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const Index: NextPage<Props> = ({ post }) => {
+  console.log(post);
   return (
     <>
       <ProgressBar />
-      <article className="container mx-auto h-fit">
-        <h1 className="text-9xl text-center leading-poppins-fit my-20">
+      <motion.article
+        className="container mx-auto h-fit"
+        exit={{ opacity: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-4xl md:text-6xl xl:text-9xl text-center leading-snug xl:leading-poppins-fit mt-20 md:my-20">
           {post.title}
         </h1>
         {post.postGallery.length === 1 ? (
-          <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-5xl relative">
             <Image
               src={post.featuredImage[0].url}
               alt="title"
@@ -67,10 +74,10 @@ const Index: NextPage<Props> = ({ post }) => {
         ) : (
           <GalleryImage postImages={post.postGallery as PostImages[]} />
         )}
-        <div className="w-10/12 mx-auto">
+        <div className="w-10/12 mx-auto mb-24">
           {documentToReactComponents(post.postText!, RICHTEXT_OPTIONS)}
         </div>
-      </article>
+      </motion.article>
     </>
   );
 };

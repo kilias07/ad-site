@@ -1,8 +1,15 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Cta = () => {
   return (
-    <section className="max-w-screen-3xl mx-auto flex justify-center flex-wrap gap-10 my-20">
+    <motion.section
+      className="max-w-screen-3xl mx-auto flex justify-center flex-wrap gap-10 my-20"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+    >
       <div className="w-[20rem] text-center">
         <div className="w-1/2 mx-auto">
           <Image
@@ -80,7 +87,7 @@ const Cta = () => {
           i rozwiązań
         </p>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

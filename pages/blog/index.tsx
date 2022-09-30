@@ -3,6 +3,8 @@ import ContentService from "../../lib/contentfulClient";
 import { IPosts } from "../../src/@types/contentful";
 import BlogCard from "../../components/blog/BlogCard";
 import SearchPosts from "../../components/blog/searchPosts";
+import { animate, AnimatePresence, motion } from "framer-motion";
+import { stagger } from "../../components/animations/blogAnimation";
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await ContentService.instance.getEntriesByType<IPosts[]>(
@@ -16,16 +18,22 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Blog: NextPage<{ posts: IPosts[] }> = ({ posts }) => {
+const Blog: NextPage<{ posts: IPosts[]; test: any }> = ({ posts, test }) => {
   return (
-    <div className="container mx-auto flex flex-col lg:flex-row items-center lg:items-start">
+    <motion.div
+      className="container mx-auto flex flex-col lg:flex-row items-center lg:items-start"
+      key="blog"
+      exit={{ opacity: 0 }}
+      initial="initial"
+      animate="animate"
+    >
       <SearchPosts />
-      <div className="lg:w-3/4">
+      <motion.div className="lg:w-3/4" variants={stagger}>
         {posts.map((post) => (
           <BlogCard post={post} key={post.sys.id} />
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

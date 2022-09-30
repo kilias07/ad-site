@@ -26,7 +26,7 @@ export const HeroSection = () => {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.9 }}
       >
-        <Link href="components/MainSite/hero#">
+        <Link href="blog/dupa">
           <a>
             <div className="absolute inset-y-0 right-4 -top-6 sm:-top-12 w-1/2 md:w-1/3 h-16 sm:h-24 bg-claretDark text-right rounded shadow-2xl text-backgroundColorTest p-1">
               <h2 className="mt-5 sm:mt-11 text-xs sm:text-base font-light italic">
