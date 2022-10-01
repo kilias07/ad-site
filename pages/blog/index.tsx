@@ -1,10 +1,10 @@
 import { GetStaticProps, NextPage } from "next";
 import ContentService from "../../lib/contentfulClient";
-import { IPosts } from "../../src/@types/contentful";
 import BlogCard from "../../components/blog/BlogCard";
 import SearchPosts from "../../components/blog/searchPosts";
-import { animate, AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { stagger } from "../../components/animations/blogAnimation";
+import { IPosts } from "../../types/contentful";
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await ContentService.instance.getEntriesByType<IPosts[]>(

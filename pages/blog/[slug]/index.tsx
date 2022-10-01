@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import ContentService from "../../../lib/contentfulClient";
-import { IPostsFields } from "../../../src/@types/contentful";
+import { IPostsFields } from "../../../types/contentful";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { RICHTEXT_OPTIONS } from "../../../components/contentfulRichText";
